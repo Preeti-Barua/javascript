@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function func1(){
+            var select=document.getElementById("selectbox");
+            alert(select.options[select.selectedIndex].value);
+            }
+
+        </script>
+    </head>
+    <body>
+        <select id="selectbox">
+            <option value="tea"> tea</option>
+            <option value="coffee">coffee</option>
+            <option value="cold coffee">cold coffee </option>
+            
+        </select>
+        <br>
+        <br>
+            <button onclick="func1()">click me</button>
+
+        
+    </body>
+</html>
