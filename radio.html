@@ -1,12 +1,113 @@
 <html>
 <head>
-<body>
-<form>
-
-<input type="text" id="t" />
-</br>
-<input type="radio" name="x"/> s
-<input type="radio" name="x"/> h
-</body>
 </head>
+<body>
+
+<Br/>
+
+<input type="text" id="t1" />
+<Br/><input type="radio" name="x" id="p" onclick="f1()"/> double
+<input type="radio" name="x"  id="q" onclick="f2()"/> triple
+
+</body>
+<script>
+
+
+function f2()
+{
+let y = document.getElementById("t1");
+let z = document.getElementById("q");
+z.checked=false;
+
+
+if(y.value != 0)
+{
+y.value = y.value *3;
+
+}
+else
+{
+  y.disabled=true;
+
+<html>
+<head>
+</head>
+<body>
+
+<Br/>
+
+<input type="text" id="t1" />
+<Br/><input type="radio" name="x" id="p" onclick="f1()"/> double
+<input type="radio" name="x"  id="q" onclick="f2()"/> triple
+
+</body>
+<script>
+
+
+function f1()
+{
+let y = document.getElementById("t1");
+let z = document.getElementById("q");
+z.checked=false;
+
+
+if(y.value != 0)
+{
+y.value = y.value *3;
+
+}
+else
+{
+  y.disabled=true;
+
+
+}
+
+
+
+}
+
+function f1()
+{
+let y = document.getElementById("t1");
+let z = document.getElementById("p");
+z.checked=false;
+if(y.value != 0)
+{
+y.value = y.value *2;
+
+}
+else
+{
+  y.disabled=true;
+
+
+}
+}
+</script>
+</html>
+}
+
+
+
+}
+
+function f1()
+{
+let y = document.getElementById("t1");
+let z = document.getElementById("p");
+z.checked=false;
+if(y.value != 0)
+{
+y.value = y.value *2;
+
+}
+else
+{
+  y.disabled=true;
+
+
+}
+}
+</script>
 </html>
