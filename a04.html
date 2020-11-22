@@ -1,0 +1,197 @@
+<html>
+<head>
+<style>
+.iv  { visibility: hidden}
+.v { visibility: visible }
+</style>
+</head>
+<body>
+<h1> question5</h1>
+<Br/> Alphabet <input type="text" id="t1"/> <span id="msg">message</span>
+<Br/> <input type="text" id="t2" class="iv"/>
+<Br/> <button id="sb" onclick="searchfunction()">search</button>
+<button id="ab"disabled onclick="addfunction()">add</button>
+<button id="ub" disabled onclick="updatefuntion()">update</button>
+<button id="rb" disabled onclick="removefunction()">remove</button>
+<hr/>
+<p id="coa"> hello</p>
+</body>
+
+<script>
+
+var ac=['c','a','b','p','o','e'];
+var hwt=0;
+
+printArray();
+
+function updatefuntion()
+{
+let msg = document.getElementById("msg");
+let t1 = document.getElementById("t1");
+let t2 = document.getElementById("t2");
+if(hwt == 0 )
+{
+   
+    t2.className="v";
+    hwt++;
+	msg.innerHTML="ok enter new vlaue in textbox";
+
+	
+}
+else
+{
+	hwt=0;
+	let pos = ac.indexOf(t1.value);
+	if(pos != -1)
+	{
+		ac[pos]=Int(t2.value); //giving the new text box value.
+		msg.innerHTML="updated";
+	}
+	else
+	{
+		msg.innerHTML="value not found";
+
+	}
+		
+		let x =  document.getElementById("ab");
+		x.disabled=true;
+		x =  document.getElementById("rb");
+		x.disabled=true;
+		x =  document.getElementById("ub");
+		x.disabled=true;
+		x =  document.getElementById("sb");
+		x.disabled=false;
+		t2.className="iv";
+		t1.value=0;
+		t2.value=0;
+				
+
+	}
+
+	printArray();
+
+
+}
+
+
+
+function removefunction()
+{
+let ng = document.getElementById("t1");
+let pos = ac.indexOf(ng.value);
+let msg = document.getElementById("msg");
+if( pos != -1)
+{
+	ac.splice(pos,1);
+	msg.innerHTML="removed";
+
+}
+else
+	msg.innerHTML="crazy did you change the textbox value";
+
+let x =  document.getElementById("ab");
+		x.disabled=true;
+		x =  document.getElementById("rb");
+		x.disabled=true;
+		x =  document.getElementById("ub");
+		x.disabled=true;
+		x =  document.getElementById("sb");
+		x.disabled=false;
+		ng.value="";	
+	
+printArray();
+
+}
+
+function addfunction()
+{
+	let ng = document.getElementById("t1");
+	let msg = document.getElementById("msg");
+	
+	if(ng.value > 0)
+	{
+		ac.push(ng.value);
+		msg.innerHTML="added";
+	
+	}
+	else
+	{
+		msg.innerHTML="could not add becuase it is not greater than zero";
+	
+	
+	}
+	let x =  document.getElementById("ab");
+		x.disabled=true;
+		x =  document.getElementById("rb");
+		x.disabled=true;
+		x =  document.getElementById("ub");
+		x.disabled=true;
+		x =  document.getElementById("sb");
+		x.disabled=false;
+		ng.value="";
+		
+	
+		printArray();
+
+}
+
+
+function searchfunction()
+{	
+	
+	let ng = document.getElementById("t1");
+	let pos = ac.indexOf(ng.value);
+	let msg = document.getElementById("msg");
+	//ub  rb  sb ab
+	if(pos != -1)
+	{	
+		let x =  document.getElementById("ab");
+		x.disabled=true;
+		x =  document.getElementById("rb");
+		x.disabled=false;
+		x =  document.getElementById("ub");
+		x.disabled=false;
+		x =  document.getElementById("sb");
+		x.disabled=true;
+		
+		
+		msg.innerHTML="found";
+		
+	}
+	else
+	{
+	    msg.innerHTML="not found";
+		let x =  document.getElementById("ab");
+		x.disabled=false;
+		x =  document.getElementById("rb");
+		x.disabled=true;
+		x =  document.getElementById("ub");
+		x.disabled=true;
+		x =  document.getElementById("sb");
+		x.disabled=true;
+	
+	
+	
+	
+	
+	}
+	printArray();
+	
+}
+
+function printArray()
+{
+let contents ="";
+for(let x=0; x< ac.length; x++)
+	contents+=ac[x] + " ";
+let y = document.getElementById("coa");
+y.innerHTML=contents;
+
+
+
+
+}
+
+
+</script>
+</html>
